@@ -16,8 +16,10 @@ public class Payment extends BaseModel {
     private double amount;
     private Date timeStamp;
     private String transactionNo;
-    @Enumerated(EnumType.STRING)
+
+    @Enumerated(EnumType.STRING) // table for Enum
     private PaymentStatus paymentStatus;
+
     @OneToOne
     private Ticket ticket;
 }

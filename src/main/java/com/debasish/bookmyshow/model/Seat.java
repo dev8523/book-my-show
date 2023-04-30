@@ -14,10 +14,13 @@ public class Seat extends BaseModel {
     private String seatNumber;
     private int row;
     private int column;
+
     @Enumerated(EnumType.STRING) // create a table for the enum, and mark the relationship
     private SeatType seatType;
+
     @Enumerated(EnumType.STRING)
     private SeatStatus seatStatus;
+
     @ManyToOne
     private Auditorium auditorium;
 }

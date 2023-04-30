@@ -16,12 +16,16 @@ import java.util.List;
 public class Ticket extends BaseModel {
     private double totalAmount;
     private Date timeOfBooking;
+
     @ManyToOne
     private Show show;
+
     @OneToMany
     private List<ShowSeat> showSeats;
+
     @ManyToOne
     private User bookedBy;
+
     @OneToOne
     private Payment payment;
 

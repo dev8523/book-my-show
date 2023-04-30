@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 public class Actor extends BaseModel {
     private String name;
+
     @ManyToMany
     private List<Movie> movies;
 }

@@ -11,10 +11,13 @@ import java.util.List;
 @Setter
 public class Auditorium extends BaseModel {
     private String name;
+
     @OneToMany
     private List<Seat> seats;
+
     @ManyToOne
     private Theatre theatre;
+
     @ElementCollection // M:M mapping with enums
     @Enumerated(EnumType.STRING) // table for Enum
     private List<Feature> auditoriumFeatures;

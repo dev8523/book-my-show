@@ -13,16 +13,21 @@ import java.util.List;
 public class Show extends BaseModel {
     private Date startTime;
     private Date endTime;
+
     @ManyToOne
     private Movie movie;
+
     @ManyToOne
     private Auditorium auditorium;
+
     @OneToMany
     private List<ShowSeat> showSeats;
+
     @OneToMany
     private List<Ticket> tickets;
-    @ElementCollection
-    @Enumerated(EnumType.STRING)
+
+    @ElementCollection // M:M mapping with enums
+    @Enumerated(EnumType.STRING) // table for Enum
     private List<Feature> showFeatures;
 
     //showType add if required

@@ -12,12 +12,16 @@ import lombok.Setter;
 @Setter
 public class ShowSeat extends BaseModel {
     private int price;
+
     @ManyToOne
     private Seat seat;
+
     @ManyToOne
     private Show show;
-    @Enumerated(EnumType.STRING)
+
+    @Enumerated(EnumType.STRING) // table for Enum
     private ShowSeatStatus seatStatus;
+
     @ManyToOne
     private Ticket ticket;
 }

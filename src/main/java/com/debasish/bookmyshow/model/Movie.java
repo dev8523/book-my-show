@@ -16,13 +16,17 @@ public class Movie extends BaseModel {
     private int duration;
     private double rating;
     private Date releaseDate;
+
     @OneToMany
     private List<Show> shows;
+
     @ManyToMany
     private List<Actor> actors;
+
     @ElementCollection // M:M mapping with enums
     @Enumerated(EnumType.STRING) // table for Enum
     private List<Feature> movieFeatures;
+
     @ElementCollection // M:M mapping with enums
     @Enumerated(EnumType.STRING) // table for Enum
     private List<Language> languages;
