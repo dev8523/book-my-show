@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface ShowSeatRepository extends JpaRepository<ShowSeat, Long> {
 
+    //putting pessimistic lock on the below query
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-        //putting pessimistic lock on the below query
     List<ShowSeat> findByIdIn(List<Long> showSeatIds); // select * from showSeat where id in (...);
 
     ShowSeat save(ShowSeat seat); // insert new record and update an existing record
